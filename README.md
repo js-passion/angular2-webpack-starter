@@ -332,40 +332,6 @@ import * as _ from 'lodash';
  * remove `node_modules/typescript` and run `npm install typescript@beta`. This repo now uses ts 2.0 
 * "There are multiple modules with names that only differ in casing"
  * change `c:\[path to angular2-webpack-starter]` to `C:\[path to angular2-webpack-starter]` see [926#issuecomment-245223547](https://github.com/AngularClass/angular2-webpack-starter/issues/926#issuecomment-245223547)
-
-# Support, Questions, or Feedback
-> Contact us anytime for anything about this repo or Angular 2
-
-* [Chat: AngularClass.slack](http://angularclass.com/member-join/)
-* [Twitter: @AngularClass](https://twitter.com/AngularClass)
-* [Gitter: AngularClass/angular2-webpack-starter](https://gitter.im/angularclass/angular2-webpack-starter)
-
-# Deployment
-
-## Netlify
-
-You can quickly create a free site to get started using this
-starter kit in production on [Netlify](https://www.netlify.com/):
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/AngularClass/angular2-webpack-starter)
-
-<p align="center">
-  <a href="http://courses.angularclass.com/courses/angular-2-fundamentals" target="_blank">
-    <img width="438" alt="Angular 2 Fundamentals" src="https://cloud.githubusercontent.com/assets/1016365/17200649/085798c6-543c-11e6-8ad0-2484f0641624.png">
-  </a>
-</p>
-
-___
-
-enjoy — **AngularClass**
-
-<br><br>
-
-[![AngularClass](https://cloud.githubusercontent.com/assets/1016365/9863770/cb0620fc-5af7-11e5-89df-d4b0b2cdfc43.png  "Angular Class")](https://angularclass.com)
-##[AngularClass](https://angularclass.com)
-> Learn AngularJS, Angular 2, and Modern Web Development from the best.
-> Looking for corporate Angular training, want to host us, or Angular consulting? patrick@angularclass.com
-
 ___
 
 # License
