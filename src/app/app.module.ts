@@ -1,6 +1,6 @@
+import { HttpModule, Http } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import {
   NgModule,
   ApplicationRef
@@ -15,6 +15,12 @@ import {
   PreloadAllModules
 } from '@angular/router';
 
+import {
+  TranslateModule,
+  TranslateLoader
+} from '@ngx-translate/core';
+
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -46,6 +52,11 @@ type StoreType = {
   disposeOldHosts: () => void
 };
 
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: Http) {
+    return new TranslateHttpLoader(http, 'i18n/', '.json');
+}
+
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -63,7 +74,14 @@ type StoreType = {
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
-    HotkeyModule.forRoot()
+    HotkeyModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [Http]
+      }
+    })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

@@ -266,6 +266,7 @@ module.exports = function (options) {
        */
       new CopyWebpackPlugin([
         { from: 'src/assets', to: 'assets' },
+        { from: 'src/i18n', to: 'i18n' },
         { from: 'src/meta'}
       ]),
 

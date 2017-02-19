@@ -11,6 +11,8 @@ import { AppState } from './app.service';
 import { HotkeysService } from 'angular2-hotkeys';
 import { Hotkey } from 'angular2-hotkeys';
 
+import { TranslateService } from '@ngx-translate/core';
+
 /*
  * App Component
  * Top Level Component
@@ -44,6 +46,16 @@ import { Hotkey } from 'angular2-hotkeys';
         About
       </a>
     </nav>
+    <h2>{{ 'home.title' | translate }}</h2>
+    <label>
+      {{ 'home.select' | translate }}
+      <select #langSelect (change)="changeLanguage(langSelect.value)">
+        <option *ngFor="let lang of getLanguages()" 
+          [value]="lang" [selected]="lang === getCurrentLanguage()">
+          {{ lang }}
+        </option>
+      </select>
+    </label>
 
     <main>
       <router-outlet></router-outlet>
@@ -52,12 +64,7 @@ import { Hotkey } from 'angular2-hotkeys';
     <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
 
     <footer>
-      <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
-      <div>
-        <a [href]="url">
-          <img [src]="angularclassLogo" width="25%">
-        </a>
-      </div>
+      <span>WebPack Angular 2 Starter</span>
     </footer>
   `
 })
@@ -68,8 +75,16 @@ export class AppComponent implements OnInit {
 
   constructor(
     public appState: AppState,
-    private _hotkeysService: HotkeysService
-  ) {}
+    private _hotkeysService: HotkeysService,
+    private translate: TranslateService
+  ) {
+        translate.addLangs(['en', 'fr']);
+        translate.setDefaultLang('en');
+
+        let browserLang = translate.getBrowserLang();
+        translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+
+  }
 
   public ngOnInit() {
     console.log('Initial App State', this.appState.state);
@@ -77,6 +92,18 @@ export class AppComponent implements OnInit {
         console.log('Typed hotkey');
         return false; // Prevent bubbling
     }));
+  }
+
+  public changeLanguage(lang) {
+    this.translate.use(lang);
+  }
+
+  public getLanguages() {
+    return this.translate.getLangs();
+  }
+
+  public getCurrentLanguage() {
+    return this.translate.currentLang;
   }
 
 }

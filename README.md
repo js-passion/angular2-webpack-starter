@@ -1,7 +1,7 @@
 ### This project replica of [Angular2 Webpack Starter] (https://github.com/AngularClass/angular2-webpack-starter) with some of addition features
 * Support of angular-cli
 * Example to demo [angular2-hotkeys] (https://github.com/brtnshrdr/angular2-hotkeys).
-
+* Support Localization [@ngx-translate/core] (https://github.com/ngx-translate/core).
 
 This seed repo serves as an Angular 2 starter for anyone looking to get up and running with Angular 2 and TypeScript fast. Using a [Webpack 2](http://webpack.github.io/) for building our files and assisting with boilerplate. We're also using Protractor for our end-to-end story and Karma for our unit tests.
 * Best practices in file and application organization for Angular 2.
@@ -26,7 +26,7 @@ This seed repo serves as an Angular 2 starter for anyone looking to get up and r
 ```bash
 # clone our repo
 # --depth 1 removes all but one .git commit history
-git clone --depth 1 https://github.com/angularclass/angular2-webpack-starter.git
+git clone --depth 1 https://github.com/mhussain001/angular2-webpack-starter.git
 
 # change directory to our repo
 cd angular2-webpack-starter
@@ -332,6 +332,9 @@ import * as _ from 'lodash';
  * remove `node_modules/typescript` and run `npm install typescript@beta`. This repo now uses ts 2.0 
 * "There are multiple modules with names that only differ in casing"
  * change `c:\[path to angular2-webpack-starter]` to `C:\[path to angular2-webpack-starter]` see [926#issuecomment-245223547](https://github.com/AngularClass/angular2-webpack-starter/issues/926#issuecomment-245223547)
+___
+Todo
+* Move e2e outside of src
 ___
 
 # License
